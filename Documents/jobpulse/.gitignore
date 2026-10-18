@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.env
+.pytest_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+.DS_Store
+
+# data + trained artifacts (regenerate with `jobpulse init` / `jobpulse train`)
+data/*
+!data/.gitkeep
+models/*
+!models/.gitkeep

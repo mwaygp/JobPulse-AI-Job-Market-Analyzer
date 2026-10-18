@@ -1,0 +1,2 @@
+# Optional and heavy (pulls in PyTorch). Gives better embeddings than the TF-IDF fallback.
+sentence-transformers>=2.7

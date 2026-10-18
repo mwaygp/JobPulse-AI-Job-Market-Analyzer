@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "jobpulse"
+version = "0.1.0"
+description = "AI job market analyzer: NLP skill extraction, ML salary prediction, clustering, and an LLM-powered RAG chatbot."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "pandas>=2.0",
+    "numpy>=1.24",
+    "scikit-learn>=1.3",
+    "joblib>=1.3",
+    "requests>=2.31",
+    "python-dotenv>=1.0",
+]
+
+[project.optional-dependencies]
+xgb = ["xgboost>=2.0"]
+nlp = ["spacy>=3.7"]
+embeddings = ["sentence-transformers>=2.7"]
+llm = ["anthropic>=0.40"]
+api = ["fastapi>=0.110", "uvicorn[standard]>=0.29", "httpx>=0.27"]
+app = ["streamlit>=1.35"]
+dev = ["pytest>=8.0", "ruff>=0.4"]
+
+[project.scripts]
+jobpulse = "jobpulse.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
